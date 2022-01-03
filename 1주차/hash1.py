@@ -1,5 +1,5 @@
 def solution(participant, completion):
-    answer=dict()
+    answer={}
     hashCount=0
     for p in participant:
         answer[hash(p)]=p
