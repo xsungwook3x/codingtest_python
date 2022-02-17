@@ -1,22 +1,21 @@
 def solution(distance, rocks, n):
-    position = [0] + sorted(rocks) + [distance] # [0, 2, 11, 14, 17, 21, 25]
-    start = 1
-    end = distance
-
-    while start < end:
-        mid = (start+end) // 2
+    answer = 0
+    sorted_rocks = sorted(rocks)
+    sorted_rocks.append(distance) # [2,11,14,17,21,25]
+    left = 0
+    right = distance
+    while left <= right:
+        mid = (left + right)//2
         cnt = 0
-        i = 0
-        j = 1
-        while j <= len(position)-1 :
-            if position[j]-position[i] < mid:
+        position = 0
+        for i in range(len(sorted_rocks)):
+            if sorted_rocks[i] - position < mid :
                 cnt += 1
-                j += 1
             else:
-                i = j
-                j += 1
+                position = sorted_rocks[i]
         if cnt > n:
-            end = mid
+            right = mid - 1
         else:
-            start = mid + 1
-    return start - 1
+            left = mid + 1
+            answer = mid
+    return answer
