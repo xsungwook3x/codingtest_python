@@ -1,18 +1,18 @@
-lotto=''
+n = int(input())
+s = str(n)
+count=0
 while True:
-    n=int(input())
-    if n ==7:
+    tmp = 0
+    for j in s:
+        tmp += int(j)
+
+    s = s[1] + str(tmp)[-1]
+
+
+    count+=1
+    if int(s) == n:
         break
-    if n==4:
-        continue
+print(count)
 
-    lotto+=str(n)
 
-lotto=int(lotto)
-if lotto%11==0:
-    print("1st prize")
-elif lotto%7==0:
-    print("2nd prize")
 
-else:
-    print("No prize")
