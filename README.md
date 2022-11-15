@@ -1,6 +1,4 @@
-# codingtest_python
-코딩테스트 파이썬
-
+# 코테 뿌시기 by Python
 
 # 계획
 
